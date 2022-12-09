@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Interface Github</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="block">
+        <h1>Search Interface Github</h1>
+        <div>
+            <form action="#">
+                <input id="input" type="text" name="input">
+                <button id="btn">Rechercher</button><br>
+            </form>
+           
+        </div>
+        <span id="logo_person"></span>
+    </div>
+
+    <script>
+      
+      const async=async function(){
+        let url='https://api.github.com/users';
+        let reponse=await fetch(url);
+        let name = await reponse.json();
+        console.log(name);
+        let btn=document.getElementById("btn");
+        let input=document.getElementById("input");
+        let views=document.getElementById("logo_person");
+        btn.addEventListener("click", function(e){
+            e.preventDefault();
+            let value= input.value;
+            name.forEach(function(element,index) {
+                if(element.login ===value){
+                    views.innerHTML="Login: "+element.login+ "<br>";
+                    views.innerHTML+="id: "+element.id+ "<br>";
+                    views.innerHTML+="node_id: "+element.node_id + "<br>";
+                }
+                // else{
+                //   views.innerHTML= value +" ne se trouve pas dans la base de donnée github";
+                // }
+            });
+        })
+        console.log(name[2].login);
+      }
+      async();
+    // let btn=document.getElementById("btn");
+    // let input=document.getElementById("input");
+    // let views=document.getElementById("logo_person");
+    // btn.addEventListener("click", function(e){
+    //     e.preventDefault();
+    //     let value= input.value;
+    //     tab.forEach(function(element,index) {
+    //         if(element.login ===value){
+    //             views.innerHTML="Login: "+element.login+ "<br>";
+    //             views.innerHTML+="id: "+element.id+ "<br>";
+    //             views.innerHTML+="node_id: "+element.node_id + "<br>";
+    //         }
+    //     });
+    // })
+    </script>
+</body>
+</html>
