@@ -30,6 +30,9 @@ h1 {
     box-shadow: 0 10px 30px -5px rgba(60, 60, 60, 0.2);
     text-align: center;
     padding: 30px 60px;
+    max-width: 350px;
+    font-weight: bold;
+    margin: 0 auto;
 }
 .card img {
     background-color: #dddfe6;
@@ -40,15 +43,18 @@ h1 {
     display: block;
 }
 .card h2 {
-    font-size: 22px;
+    font-size: 18px;
+    text-align: center;
     margin: 10px auto 0;
     letter-spacing: 1px;
 }
 .card h3 {
     margin: auto;
-    color: #b1b6c6;
+    color: #0b0c0c;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 .card .button {
     display: block;
@@ -57,6 +63,7 @@ h1 {
     color: #f9f9f9;
     padding: 12px;
     border: none;
+    margin-top: 15px;
     border-radius: 25px;
     margin-top: 30px;
     font-size: 16px;
@@ -64,6 +71,7 @@ h1 {
     min-width: 200px;
     -webkit-transition: 0.2s;
     transition: 0.2s;
+    margin: 0 auto;
 }
 .card .button span {
     font-size: 20px;
